@@ -69,9 +69,10 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (!license) {
     return "";
-  } else {
-    return 'More Information: $(renderLicenseLink(license)) (${license})';
   }
+  return `For more information about ${renderLicenseLink(
+    license
+  )}, please click the link`;
 }
 
 // TODO: Create a function to generate markdown for README

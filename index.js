@@ -62,15 +62,10 @@ function init() {
             message: questions[6],
         },
         {
-            type: "input",
+            type: "list",
             name: "license",
             message: questions[7],
-            choices: [
-                "MIT",
-                "APACHE",
-                "MOZILLA",
-                "BSD",
-            ],
+            choices: ["MIT", "APACHE", "MOZILLA", "BSD"],
         },
         {
             type: "input",
@@ -84,9 +79,9 @@ function init() {
         },
     ])
         .then((answers) => {
-        const mdPage = generateMarkdown(answers);
-        writeToFile("Gen-README.md", mdPage);
-    });
+            const mdPage = generateMarkdown(answers);
+            writeToFile("Gen-README.md", mdPage);
+        });
 }
 
 // Function call to initialize app

@@ -1,7 +1,7 @@
 # README GENERATOR
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
  ## Description 
-  README GENERATOR
+  A SIMPLE CLI APPLICATION THAT GRABS USER INPUT VIA A SERIES OF QUESTION PROMPTS
   
   ## Table of Contents
   
@@ -10,13 +10,13 @@
   * [License](#license)
   
   ## Installation
-  NO INSTALL NEEDED
+  PLEASE REFER TO PROJECT README
   
   ## Usage
-  THIS IS A TEST
+  REFER TO PROJECT README
   undefined
   ## License
-  More Information: $(renderLicenseLink(license)) (${license})
+  More Information: $(renderLicenseLink(license)) (MIT)
   ## Contributing
   NO
   ## Tests
