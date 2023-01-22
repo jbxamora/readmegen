@@ -1,9 +1,12 @@
+var inquirer = require("inquirer");
+
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (!license) {
-    return '';
-  }
+ let badge;
+ if (!license) {
+  return "";
+ } else {
   switch(license) {
 
       case "MIT":
@@ -27,29 +30,36 @@ function renderLicenseBadge(license) {
       return badge;
   }
 }
-  }
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-let link;
-  switch (license) {
-    case "MIT":
-      link = "https://opensource.org/licenses/MIT";
-      return link;
+  let link;
+  if (!license) {
+    return "";
+  } else {
+    switch (license) {
+      case "MIT":
+        link = "[MIT License](https://opensource.org/licenses/MIT)";
+        break;
 
-    case "APACHE":
-      link = "https://opensource.org/licenses/Apache-2.0";
-      return link;
+      case "APACHE":
+        link = "[Apache License](https://opensource.org/licenses/Apache-2.0)";
+        break;
 
-    case "MOZILLA":
-      link = "https://opensource.org/licenses/MPL-2.0";
-      return link;
+      case "MOZILLA":
+        link = "[Mozilla License](https://opensource.org/licenses/MPL-2.0)";
+        break;
 
-    case "BSD":
-      link = "https://opensource.org/licenses/BSD-3-Clause";
-      return link;
+      case "BSD":
+        link = "[BSD License](https://opensource.org/licenses/BSD-3-Clause)";
+        break;
+
+      default:
+        link = "";
+    }
+    return link;
   }
 }
 
@@ -59,9 +69,9 @@ let link;
 function renderLicenseSection(license) {
   if (!license) {
     return "";
-  }
-  return 'More Information: 
-  ${renderLicenseLink(license)}
+  } else {
+  return 'More Information: $(renderLicenseLink(license)) (${license})';
+}
 }
 
 // TODO: Create a function to generate markdown for README
