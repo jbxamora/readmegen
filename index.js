@@ -65,6 +65,12 @@ function init() {
             type: "input",
             name: "license",
             message: questions[7],
+            choices: [
+                "MIT",
+                "APACHE",
+                "MOZILLA",
+                "BSD",
+            ],
         },
         {
             type: "input",
