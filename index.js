@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
-import inquirer from "inquirer";
-import generateMarkdown from "./utils/generateMarkdown";
+const fs = require('fs');
+const inquirer = require("inquirer");
+const generateMarkdown = require("./Develop/utils/generateMarkdown");
 // TODO: Create an array of questions for user input
 const questions = [
     "What is the name of your project?",
@@ -17,7 +18,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeToFile(fileName, data, (err) =>
+    fs.writeFile(fileName, data, (err) =>
         err ? console.log(err) : console.log("README.md was Created!")
     );
 }
@@ -32,54 +33,54 @@ function init() {
         },
         {
             type: "input",
-            name: "title",
+            name: "username",
             message: questions[1],
         },
         {
             type: "input",
-            name: "title",
+            name: "email",
             message: questions[2],
         },
         {
             type: "input",
-            name: "title",
+            name: "description",
             message: questions[3],
         },
         {
             type: "input",
-            name: "title",
+            name: "install",
             message: questions[4],
         },
         {
             type: "input",
-            name: "title",
+            name: "howToUse",
             message: questions[5],
         },
         {
             type: "input",
-            name: "title",
+            name: "useCase",
             message: questions[6],
         },
         {
             type: "input",
-            name: "title",
+            name: "license",
             message: questions[7],
         },
         {
             type: "input",
-            name: "title",
+            name: "contributors",
             message: questions[8],
         },
         {
             type: "input",
-            name: "title",
+            name: "tests",
             message: questions[9],
         },
     ])
-        .then(answers) => {
+        .then((answers) => {
         const mdPage = generateMarkdown(answers);
         writeToFile("Gen-README.md", mdPage);
-    };
+    });
 }
 
 // Function call to initialize app
